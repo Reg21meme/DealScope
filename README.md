@@ -57,6 +57,7 @@ That workflow made it easier to keep the code organized, review each change, and
 ## Current feature set
 
 ### Implemented
+
 - landing page
 - analyzer page
 - property details form
@@ -70,6 +71,7 @@ That workflow made it easier to keep the code organized, review each change, and
 - separated calculation and validation logic
 
 ### In progress / planned
+
 - local persistence and saved deals dashboard
 - PDF export
 - advanced reporting
@@ -100,38 +102,52 @@ src/
     validators/
 
   types/
+````
 
 ## Architecture notes
 
 A big goal of this project was keeping the logic clean.
 
-- calculation logic lives in pure TypeScript utility files
-- validation logic is separated from UI
-- UI components stay focused on rendering and interaction
-- analyzer behavior is built in phases instead of all at once
+* calculation logic lives in pure TypeScript utility files
+* validation logic is separated from UI
+* UI components stay focused on rendering and interaction
+* analyzer behavior is built in phases instead of all at once
 
 ## Key formulas included
 
 DealScope currently calculates:
 
-- loan amount
-- mortgage payment
-- total cash needed
-- effective monthly rent
-- operating expenses
-- NOI
-- monthly cash flow
-- annual cash flow
-- cap rate
-- cash-on-cash ROI
-- DSCR
+* loan amount
+* mortgage payment
+* total cash needed
+* effective monthly rent
+* operating expenses
+* NOI
+* monthly cash flow
+* annual cash flow
+* cap rate
+* cash-on-cash ROI
+* DSCR
 
 ## Running locally
 
 ```bash
 npm install
 npm run dev
-  
+```
+
 Then open:
-``` bash
+
+```text
 http://localhost:3000
+```
+
+````
+
+The issue was just broken code fences. After you paste this into `README.md`, save it and run:
+
+```bash id="l8eh6w"
+git add README.md
+git commit -m "docs: fix README formatting"
+git push
+````
