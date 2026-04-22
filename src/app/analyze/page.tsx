@@ -15,6 +15,8 @@ import ExpenseSection from '@/components/analyze/ExpenseSection'
 import OutputsPanel from '@/components/analyze/OutputsPanel'
 import ScenarioTabs from '@/components/analyze/ScenarioTabs'
 import ComparisonTable from '@/components/analyze/ComparisonTable'
+import PrintReport from '@/components/analyze/PrintReport'
+import { buildReportData } from '@/lib/report'
 
 type ScenarioPatch = Partial<Omit<Scenario, 'id' | 'name'>>
 type SaveStatus = 'idle' | 'saved'
@@ -182,7 +184,8 @@ export default function AnalyzePage() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <>
+    <div className="min-h-screen bg-slate-50 print:hidden">
       {/* Nav */}
       <nav className="sticky top-0 z-10 bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
@@ -228,6 +231,13 @@ export default function AnalyzePage() {
             >
               {saveStatus === 'saved' ? '✓ Saved' : dealId ? 'Save' : 'Save Deal'}
             </button>
+            <div className="w-px h-5 bg-slate-200" />
+            <button
+              onClick={() => window.print()}
+              className="shrink-0 rounded-lg px-3 py-1.5 text-xs font-semibold border border-slate-200 text-slate-600 hover:bg-slate-50 transition-colors whitespace-nowrap"
+            >
+              Export PDF
+            </button>
           </div>
         </div>
 
@@ -271,5 +281,7 @@ export default function AnalyzePage() {
         <ComparisonTable names={names} outputs={allOutputs} activeIndex={activeIndex} />
       </main>
     </div>
+    <PrintReport data={buildReportData(dealName, scenarios, activeIndex)} />
+    </>
   )
 }
