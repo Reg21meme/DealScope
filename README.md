@@ -25,21 +25,6 @@ DealScope lets you:
 
 The goal is to replace messy spreadsheets with a cleaner, faster, more visual workflow.
 
-## Why I built it
-
-I wanted to build something that felt like actual software, not just a tutorial app.
-
-Most beginner projects are too simple to feel useful. I wanted a project with:
-
-- real business value
-- meaningful calculations
-- multiple user flows
-- clean UI
-- structured architecture
-- room to grow into a full product
-
-Real estate deal analysis was a strong fit because it combines forms, calculations, validation, comparison views, and reporting in one app.
-
 ## Built with Claude Code
 
 This project was developed in a step-by-step Claude Code workflow.
@@ -59,6 +44,7 @@ That workflow made it easier to keep the code organized, review each change, and
 ### Implemented
 
 - landing page
+- saved deals dashboard
 - analyzer page
 - property details form
 - financing assumptions
@@ -67,16 +53,26 @@ That workflow made it easier to keep the code organized, review each change, and
 - operating expense assumptions
 - live calculation updates
 - three-scenario comparison
+- scenario switching
+- local persistence with saved deals
+- open, rename, and delete saved deals
 - responsive UI
 - separated calculation and validation logic
+- PDF export
 
 ### In progress / planned
 
-- local persistence and saved deals dashboard
-- PDF export
+- duplicate scenario
+- sort/filter saved deals
 - advanced reporting
+- better validation UX
+- metric tooltips and explanations
+- assumption presets
+- quick reset / reset scenario actions
+- improved PDF styling
+- dashboard analytics summaries
 - more strategy presets like Airbnb and BRRRR
-
+- cloud save / auth
 ## Tech stack
 
 - **Next.js**
